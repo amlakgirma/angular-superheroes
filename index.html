@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script style="text/javascript" src="app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body ng-controller="MyAppsController as vm">
 
-  <script src="app.js"></script>
-</body>
+  <h2>Supehero</h2>
+  <div ng-repeat="hero in vm.heros | filter: searchText" ng-class="hero.group.toLowerCase()">
+    <P>{{$index +1}}. {{hero.name}} - {{hero.number}}</p>
+  <button ng-click="vm.hero.name"> Click</button></p>
+  </div>
+     <P>Search Superhero : <input style="text" ng-model ="searchText" >
+
+
+      <script src="app.js"></script>
+    </body>
 </html>
